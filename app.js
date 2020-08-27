@@ -489,16 +489,12 @@ const div = createElement('div')
 const ul = createElement('ul')
 const h2 = createElement('h2')
 
-
 let questionStep = 0
 let currentSurvey;
-
-
 
 ul.addEventListener('click', goToNextQuestion)
 
 function init() {
-	
 	renderSurvey()
 }
 
@@ -538,7 +534,7 @@ function clearCurrentSurvey() {
 function goToNextQuestion(event) {
 	if (event.target.nodeName === 'UL') return
 	if (getSurveyStep() === data.length - 1) return
-	
+
 	const answer = {
 		question: event.target.parentElement.dataset.question,
 		questionNumber: getSurveyStep(),
