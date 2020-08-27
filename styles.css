@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    margin-bottom: 8px;
+    border: 2px solid orange;
+    padding: 8px;
+    transition: all .2s;
+}
+
+li:hover {
+    background: orange;
+    color: white;
+}
