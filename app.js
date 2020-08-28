@@ -481,27 +481,28 @@ const data = [
 		],
 	},
 ];
-
-const answers = [];
+const questionMarkTextArray = ['A', 'B', 'C', 'D', 'E']
+let answers = [];
 
 const app = document.querySelector('#app')
+const backButton = document.querySelector('#voltar')
 const div = createElement('div')
 const ul = createElement('ul')
 const h2 = createElement('h2')
 
+div.className = 'survey-container'
+ul.id = 'survey-list'
+
 let questionStep = 0
 let currentSurvey;
 
-ul.addEventListener('click', goToNextQuestion)
+backButton.addEventListener('click', backOneQuestion)
 
 function init() {
 	renderSurvey()
 }
 
 function renderSurvey() {
-
-	ul.id = 'survey-list'
-	ul.addEventListener
 
     currentSurvey = data[questionStep]
     h2.innerText = currentSurvey.question
@@ -511,10 +512,22 @@ function renderSurvey() {
 
 	ul.dataset.question = currentSurvey.question
 
-    choices.map(item => {
-        const li = createElement('li')
-        li.innerText = item.choice
+    choices.map((item, index) => {
+
+		const li = createElement('li')
+		li.addEventListener('click', goToNextQuestion)
+		const questionMark = createElement('div')
+		const p = createElement('p')
+
+		questionMark.innerText = questionMarkTextArray[index]
+		questionMark.className = 'question-mark'
+		p.innerText = item.choice
+
 		li.dataset.number = item.choiceNumber
+		li.className = 'choice-item'
+
+		li.appendChild(questionMark)
+		li.appendChild(p)
         ul.appendChild(li)
     })
 
@@ -532,22 +545,32 @@ function clearCurrentSurvey() {
 }
 
 function goToNextQuestion(event) {
-	if (event.target.nodeName === 'UL') return
+	console.log(event)
+	let dataNumber;
+	if (event.target.nodeName === 'P' || event.target.nodeName === 'DIV') {
+		console.log(event.target.nodeName)
+		console.log(event.target.parentElement.dataset.number)
+		const element = event.target.parentElement
+		dataNumber = element.dataset.number
+	} else {
+		console.log(event.target.dataset.number)
+		dataNumber = event.target.dataset.number
+	}
 	if (getSurveyStep() === data.length - 1) return
 
 	const answer = {
-		question: event.target.parentElement.dataset.question,
+		question: data[getSurveyStep()].question,
 		questionNumber: getSurveyStep(),
 		answer: event.target.innerText,
-		answerNumber: event.target.dataset.number,
+		answerNumber: parseInt(dataNumber),
 	}
 
 	incrementSurveyStep()
 	clearCurrentSurvey()
 	renderSurvey()
 	
-	
-	console.log(answer)
+	answers.push(answer)
+	console.log(answers)
 }
 
 function createElement(element) {
@@ -564,6 +587,14 @@ function decrementSurveyStep() {
 
 function getSurveyStep() {
 	return questionStep
+}
+
+function backOneQuestion() {
+	if (getSurveyStep() === 0) return
+	decrementSurveyStep()
+	clearCurrentSurvey()
+	renderSurvey()
+	answers.splice(getSurveyStep(), 1)
 }
 
 init()
