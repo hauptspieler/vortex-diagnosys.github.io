@@ -500,6 +500,7 @@ backButton.addEventListener('click', backOneQuestion)
 
 function init() {
 	renderSurvey()
+	toggelEnableBackButton()
 }
 
 function renderSurvey() {
@@ -565,12 +566,13 @@ function goToNextQuestion(event) {
 		answerNumber: parseInt(dataNumber),
 	}
 
+	answers.push(answer)
+
 	incrementSurveyStep()
 	clearCurrentSurvey()
 	renderSurvey()
-	
-	answers.push(answer)
-	console.log(answers)
+	toggelEnableBackButton()
+
 }
 
 function createElement(element) {
@@ -594,7 +596,13 @@ function backOneQuestion() {
 	decrementSurveyStep()
 	clearCurrentSurvey()
 	renderSurvey()
+	toggelEnableBackButton()
 	answers.splice(getSurveyStep(), 1)
+}
+
+function toggelEnableBackButton() {
+	if (getSurveyStep() === 0)  backButton.disabled = true
+	else backButton.disabled = false
 }
 
 init()
