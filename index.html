@@ -8,14 +8,22 @@
 </head>
 
 <body>
-    <main >
-        <section id="app">
-        </section>
-        <div id="action-container">
-            <button type="button" id="voltar">Voltar questão</button>
-            <button type="button" id="finish" disabled>Finalizar</button>
+    <main>
+        <div class="progress-bar" id="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div class="content-container">
+            <div class="counter-container" id="counter-survey"></div>
+            <section class="survery-container" id="app">
+            </section>
+            <div class="button-container" id="action-container">
+                
+                <button class="btn btn-secondary" type="button" id="voltar">Voltar questão</button>
+                <button class="btn btn-primary" type="button" id="finish" disabled>Finalizar</button>
+            </div>
         </div>
     </main>
+    <script src="data.js"></script>
     <script src="app.js"></script>
 </body>
 
