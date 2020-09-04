@@ -12,7 +12,7 @@
 
 <body>
     <main class="form-main">
-        <form required class="form-container" action="handleSubmit" method="post" name="contact-form" id="container">
+        <form required class="form-container" action="handleSubmit" method="post" name="contact-form" id="form">
             <div class="form-controller">
                 <label>Quando sua startup foi criada?</label>
                 <select name="founded" required>
@@ -26,12 +26,12 @@
             </div>
             <div class="form-controller">
                 <label> Descrição do negócio</label>
-                <textarea class="contact" name="description"></textarea>
+                <textarea class="contact" name="description" required></textarea>
             </div>
 
             <div class="form-controller">
                 <label>Qual o setor de atuação?</label>
-                <select name="sector">
+                <select name="sector" required>
                     <option selected disabled>Selecione uma opção</option>
                     <option>Fintech</option>
                     <option>Agtech</option>
@@ -47,7 +47,7 @@
 
             <div class="form-controller">
                 <label>Qual o modelo de negócio?</label>
-                <select name="businessModel">
+                <select name="businessModel" required>
                     <option selected disabled>Selecione uma opção</option>
                     <option>SaaS</option>
                     <option>Market Place</option>
@@ -62,7 +62,7 @@
 
             <div class="form-controller">
                 <label>Qual o tipo de venda?</label>
-                <select name="businessType">
+                <select name="businessType" required>
                     <option selected disabled>Selecione uma opção</option>
                     <option>B2B</option>
                     <option>B2C</option>
@@ -75,12 +75,12 @@
 
             <div class="form-controller">
                 <label>Já passou por algum processo de aceleração? Se sim, onde?</label>
-                <textarea class="contact" name="aceleratedStartup"></textarea>
+                <textarea class="contact" name="aceleratedStartup" required></textarea>
             </div>
 
             <div class="form-controller">
                 <label>Qual a dedicação do time a esse negócio atualmente?</label>
-                <select name="dedication">
+                <select name="dedication" required>
                     <option selected disabled>Selecione uma opção</option>
                     <option>Esporádica</option>
                     <option>Todos os sócios part-time</option>
@@ -92,7 +92,7 @@
 
             <div class="form-controller">
                 <label>Até onde querem levar essa empresa?</label>
-                <select name="goals">
+                <select name="goals" required>
                     <option selected disabled>Selecione uma opção</option>
                     <option>Não sabemos.</option>
                     <option>Não queremos vender, mas queremos ganhar um bom dinheiro mensalmente.</option>
@@ -104,7 +104,7 @@
 
             <div class="form-controller">
                 <label>Como ficou sabendo desse diagnóstico?</label>
-                <textarea class="contact" name="howDiagnosys"></textarea>
+                <textarea class="contact" name="howDiagnosys" required></textarea>
             </div>
 
             <div class="form-controller">
@@ -119,6 +119,9 @@
             </div>
         </form>
     </main>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
     <script src="submitForm.js"></script>
 </body>
 

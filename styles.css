@@ -195,6 +195,65 @@ li:hover {
     height: 50%;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat", sans-serif;
+}
+
+:root {
+    background-color:   #dddddd;
+}
+
+
+
+.contact-section h1{
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(2, 0, 0);
+}
+
+
+
+.contact-form{
+    max-width: 600px;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.contact-form-text{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 0;
+    background: #111;
+    padding: 20px 40px;
+    outline: none;
+    color: #f8663a;
+    transition: 0.5s;
+}
+
+.contact-form-text:hover{
+    box-shadow: 0 0 10px 4px #f8663a;
+}
+
+.contact-form-btn{
+    float: right;
+    border: 0;
+    background: #d6623e;
+    color: #111;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.contact-form-btn:hover{
+    background: #f8663a;
+}
+
 @keyframes show-modal {
     0% {
         opacity: 0;

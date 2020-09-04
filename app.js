@@ -17,13 +17,12 @@ ul.id = 'survey-list';
 let questionStep = 0;
 let currentSurvey;
 let userData = {
-	formData: JSON.parse(sessionStorage.getItem('userData')),
 	surveyData: null,
 };
 console.log(userData);
 
 backButton.addEventListener('click', backOneQuestion);
-finish.addEventListener('click', sendDataToEmail);
+finish.addEventListener('click', finishSurvey);
 
 function init() {
 	updateCounterSurvey();
@@ -77,8 +76,8 @@ function clearCurrentSurvey() {
 function goToNextQuestion(event) {
 	// console.log(event);
 	if (getSurveyStep() >= data.length - 1) {
-		renderModal()
-		return 
+		renderModal();
+		return;
 	}
 	let dataNumber;
 	let element = event.target;
@@ -219,11 +218,13 @@ function updateOptionsClicked() {
 	}
 }
 
-function sendDataToEmail() {
+function finishSurvey() {
 	userData.surveyData = {
 		optionClicked,
 		answers,
 	};
+
+	window.location.href = './initForm.html'
 }
 
 function findBiggerAnswer() {
@@ -238,15 +239,14 @@ function findBiggerAnswer() {
 }
 
 function showModalSystemFeedback() {
-	incrementSurveyStep();
 	const mostClicked = findBiggerAnswer();
 	const modal = querySelector('#modal');
-	console.log(modal.classList.contains('hide'))
+	console.log(modal.classList.contains('hide'));
 	if (modal.classList.contains('hide')) {
-		modal.classList.remove('hide')
+		modal.classList.remove('hide');
 	}
-	querySelector('#card-content').innerText = finalAnswers[mostClicked]
-	backButton.style.display = 'none'
+	querySelector('#card-content').innerText = finalAnswers[mostClicked];
+	backButton.style.display = 'none';
 }
 
 function renderModal() {

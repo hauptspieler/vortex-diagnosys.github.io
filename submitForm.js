@@ -1,27 +1,11 @@
-const btnSubmitForm = document.querySelector('#submit-form');
+const btnSubmitForm = querySelector('#submit-form');
+console.log(btnSubmitForm)
 btnSubmitForm.addEventListener('click', handleSubmit);
-const container = document.querySelector('#container');
-let form;
-const array = Array.from(container.elements)
+const form = querySelector('#form');
+
 function handleSubmit(event) {
 	event.preventDefault();
-	if (!container.checkValidity()) {
-        array.map(el => {
-            if (el.required) {
-                if (el.classList.contains('error')) {
-                    return
-                }
-                const div = document.createElement('div')
-                const p = document.createElement('p')
-                p.innerText = 'Campo obrigatório'
-                el.classList.add('error')
-                div.appendChild(p)
-                el.parentElement.appendChild(div)
-                console.log(el)
-            }
-        })
-        return
-	} 
+	if (!verifyFormData(btnInitForm)) return
 	const {
 		founded,
 		description,
