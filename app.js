@@ -1,12 +1,3 @@
-const questionMarkTextArray = ['A', 'B', 'C', 'D', 'E'];
-let answers = [];
-let optionClicked = {
-	a: 0,
-	b: 0,
-	c: 0,
-	d: 0,
-	e: 0,
-};
 let lastOptionClicked;
 
 const app = querySelector('#app');
@@ -14,17 +5,25 @@ const backButton = querySelector('#voltar');
 const progress = querySelector('#progress');
 const progressBar = querySelector('#progress-bar');
 const counterSurvey = querySelector('#counter-survey');
+const btnFinish = querySelector('#finish');
+const systemFeedback = querySelector('#final-answers');
+
 const div = createElement('div');
 const ul = createElement('ul');
-const h2 = createElement('h2');
 
 div.className = 'survey-container';
 ul.id = 'survey-list';
 
 let questionStep = 0;
 let currentSurvey;
+let userData = {
+	formData: JSON.parse(sessionStorage.getItem('userData')),
+	surveyData: null,
+};
+console.log(userData);
 
 backButton.addEventListener('click', backOneQuestion);
+finish.addEventListener('click', sendDataToEmail);
 
 function init() {
 	updateCounterSurvey();
@@ -33,19 +32,21 @@ function init() {
 }
 
 function renderSurvey() {
+	const h2 = createElement('h2');
 	currentSurvey = data[questionStep];
 	h2.innerText = currentSurvey.question;
 	const { choices } = currentSurvey;
 
 	div.appendChild(h2);
 
-	ul.dataset.question = currentSurvey.question;
-
 	choices.map((item, index) => {
 		const li = createElement('li');
 		li.addEventListener('click', goToNextQuestion);
 		const questionMark = createElement('div');
 		const p = createElement('p');
+		const img = createElement('img');
+		img.className = 'tick off';
+		img.src = './assets/icon/tick.svg';
 
 		questionMark.innerText = questionMarkTextArray[index];
 		questionMark.className = 'question-mark';
@@ -56,6 +57,7 @@ function renderSurvey() {
 
 		li.appendChild(questionMark);
 		li.appendChild(p);
+		li.appendChild(img);
 		ul.appendChild(li);
 	});
 
@@ -64,29 +66,39 @@ function renderSurvey() {
 }
 
 function clearCurrentSurvey() {
-	while (div.firstChild) {
-		div.removeChild(div.firstChild);
-	}
 	while (ul.firstChild) {
 		ul.removeChild(ul.firstChild);
+	}
+	while (div.firstChild) {
+		div.removeChild(div.firstChild);
 	}
 }
 
 function goToNextQuestion(event) {
-	console.log(event);
+	// console.log(event);
+	if (getSurveyStep() >= data.length - 1) {
+		renderModal()
+		return 
+	}
 	let dataNumber;
+	let element = event.target;
+
 	if (event.target.nodeName === 'P' || event.target.nodeName === 'DIV') {
-		console.log(event.target.nodeName);
-		console.log(event.target.parentElement.dataset.number);
-		const element = event.target.parentElement;
+		element = event.target.parentElement;
 		dataNumber = element.dataset.number;
 	} else {
-		console.log(event.target.dataset.number);
 		dataNumber = event.target.dataset.number;
 	}
-	if (getSurveyStep() === data.length - 1) return;
-	lastOptionClicked = dataNumber
-	optionMostClicked(dataNumber)
+
+	let currentImage;
+
+	currentImage = findImageNode(element);
+	if (currentImage.classList.contains('off')) {
+		currentImage.classList.remove('off');
+	}
+	lastOptionClicked = dataNumber;
+	optionMostClicked(dataNumber);
+
 	const answer = {
 		question: data[getSurveyStep()].question,
 		questionNumber: getSurveyStep(),
@@ -95,7 +107,10 @@ function goToNextQuestion(event) {
 	};
 
 	answers.push(answer);
-	updateIncrementData();
+	setTimeout(() => {
+		updateIncrementData();
+		currentImage.classList.add('off');
+	}, 0);
 }
 
 function verifySurveyStep() {
@@ -110,10 +125,6 @@ function verifySurveyStep() {
 function updateProgress() {
 	const arraySize = data.length;
 	progress.style.width = `${((questionStep + 1) / arraySize) * 100}%`;
-}
-
-function createElement(element) {
-	return document.createElement(element);
 }
 
 function incrementSurveyStep() {
@@ -139,14 +150,8 @@ function toggelEnableBackButton() {
 	else backButton.disabled = false;
 }
 
-function querySelector(element) {
-	if (typeof element !== 'string')
-		throw new Error('element must be a string');
-	return document.querySelector(element);
-}
-
 function updateCounterSurvey() {
-	counterSurvey.textContent = `${questionStep + 1}/${data.length} `;
+	counterSurvey.textContent = `${questionStep}/${data.length} `;
 }
 
 function updateIncrementData() {
@@ -192,8 +197,7 @@ function optionMostClicked() {
 }
 
 function updateOptionsClicked() {
-	console.log(lastOptionClicked)
-	debugger
+	debugger;
 	switch (parseInt(lastOptionClicked)) {
 		case 1:
 			optionClicked.a--;
@@ -213,6 +217,43 @@ function updateOptionsClicked() {
 		default:
 			throw new Error('Oops, element without data number');
 	}
+}
+
+function sendDataToEmail() {
+	userData.surveyData = {
+		optionClicked,
+		answers,
+	};
+}
+
+function findBiggerAnswer() {
+	let maxClicked = optionClicked.a;
+	let higerOption = Object.keys(optionClicked)[0];
+	for (option in optionClicked) {
+		if (optionClicked[option] > maxClicked) {
+			higerOption = option;
+		}
+	}
+	return higerOption;
+}
+
+function showModalSystemFeedback() {
+	incrementSurveyStep();
+	const mostClicked = findBiggerAnswer();
+	const modal = querySelector('#modal');
+	console.log(modal.classList.contains('hide'))
+	if (modal.classList.contains('hide')) {
+		modal.classList.remove('hide')
+	}
+	querySelector('#card-content').innerText = finalAnswers[mostClicked]
+	backButton.style.display = 'none'
+}
+
+function renderModal() {
+	incrementSurveyStep();
+	updateCounterSurvey();
+	clearCurrentSurvey();
+	showModalSystemFeedback();
 }
 
 init();

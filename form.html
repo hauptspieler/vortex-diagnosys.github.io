@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fale um pouco mais...</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css" />
+</head>
+
+<body>
+    <main class="form-main">
+        <form required class="form-container" action="handleSubmit" method="post" name="contact-form" id="container">
+            <div class="form-controller">
+                <label>Quando sua startup foi criada?</label>
+                <select name="founded" required>
+                    <option selected disabled>Selecione uma opção</option>
+                    <option>Ainda não foi criada</option>
+                    <option>Um mês ou menos</option>
+                    <option>De um à seis meses</option>
+                    <option>De seis meses à um ano</option>
+                    <option>Mais de um ano</option>
+                </select>
+            </div>
+            <div class="form-controller">
+                <label> Descrição do negócio</label>
+                <textarea class="contact" name="description"></textarea>
+            </div>
+
+            <div class="form-controller">
+                <label>Qual o setor de atuação?</label>
+                <select name="sector">
+                    <option selected disabled>Selecione uma opção</option>
+                    <option>Fintech</option>
+                    <option>Agtech</option>
+                    <option>Construtech</option>
+                    <option>Autotech</option>
+                    <option>Edtech</option>
+                    <option>Healthech</option>
+                    <option>HRtech</option>
+                    <option>Lawtech</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+
+            <div class="form-controller">
+                <label>Qual o modelo de negócio?</label>
+                <select name="businessModel">
+                    <option selected disabled>Selecione uma opção</option>
+                    <option>SaaS</option>
+                    <option>Market Place</option>
+                    <option>Assinatura</option>
+                    <option>Ecommerce</option>
+                    <option>Software House</option>
+                    <option>Adware</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+
+
+            <div class="form-controller">
+                <label>Qual o tipo de venda?</label>
+                <select name="businessType">
+                    <option selected disabled>Selecione uma opção</option>
+                    <option>B2B</option>
+                    <option>B2C</option>
+                    <option>B2G</option>
+                    <option>B2B2C</option>
+                    <option>C2B</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+
+            <div class="form-controller">
+                <label>Já passou por algum processo de aceleração? Se sim, onde?</label>
+                <textarea class="contact" name="aceleratedStartup"></textarea>
+            </div>
+
+            <div class="form-controller">
+                <label>Qual a dedicação do time a esse negócio atualmente?</label>
+                <select name="dedication">
+                    <option selected disabled>Selecione uma opção</option>
+                    <option>Esporádica</option>
+                    <option>Todos os sócios part-time</option>
+                    <option>Um ou mais sócios full-time</option>
+                    <option>Todos os sócios full-time</option>
+                    <option>Todos os sócios e funcionários full-time.</option>
+                </select>
+            </div>
+
+            <div class="form-controller">
+                <label>Até onde querem levar essa empresa?</label>
+                <select name="goals">
+                    <option selected disabled>Selecione uma opção</option>
+                    <option>Não sabemos.</option>
+                    <option>Não queremos vender, mas queremos ganhar um bom dinheiro mensalmente.</option>
+                    <option>Vender na primeira oferta mesmo que com valuation baixo. </option>
+                    <option>Vender logo após uma série A.</option>
+                    <option>Criar um negócio global, aumentar o valuation ao máximo e só então vender.</option>
+                </select>
+            </div>
+
+            <div class="form-controller">
+                <label>Como ficou sabendo desse diagnóstico?</label>
+                <textarea class="contact" name="howDiagnosys"></textarea>
+            </div>
+
+            <div class="form-controller">
+                <label>Porque decidiu responder a esse diagnóstico?</label>
+                <textarea class="contact" name="whyDiagnosys" required></textarea>
+            </div>
+
+            <div class="form-controller">
+                <button type="submit" id="submit-form" class="btn btn-primary">
+                    Próximo passo
+                </button>
+            </div>
+        </form>
+    </main>
+    <script src="submitForm.js"></script>
+</body>
+
+</html>
