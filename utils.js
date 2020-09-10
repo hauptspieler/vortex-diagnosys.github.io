@@ -20,27 +20,51 @@ function querySelector(element) {
 	return document.querySelector(element);
 }
 
+function querySelectorAll(element) {
+	if (typeof element !== 'string')
+		throw new Error('element must be a string');
+	return document.querySelectorAll(element);
+}
+
 function verifyFormData(container) {
-	debugger
-	if (container.nodeName !== 'FORM') throw new Error('container must be a <form> node')
+	// debugger;
+	if (container.nodeName !== 'FORM')
+		throw new Error('container must be a <form> node');
 	const array = Array.from(container.elements);
 	let isValid = true;
 	if (!container.checkValidity()) {
+		// debugger
 		array.map((el) => {
-			if (el.required) {
-				if (el.classList.contains('error')) {
-					return;
+			if (el.required || !el.validity.valid) {
+				if(el.validity.valid) {
+					if (el.classList.contains('error')) {
+						el.classList.remove('error')
+						const parentDiv = el.parentElement
+						parentDiv.removeChild(parentDiv.lastElementChild)
+					}
+					return
 				}
-				const div = document.createElement('div');
-				const p = document.createElement('p');
-				p.innerText = 'Campo obrigatório';
-				el.classList.add('error');
-				div.appendChild(p);
-				el.parentElement.appendChild(div);
-				console.log(el);
-				isValid = false
-			}
+				if (!el.classList.contains('error')) {
+					const div = document.createElement('div');
+					const p = document.createElement('p');
+
+					p.classList.add('danger')
+					div.className = 'error-container'
+					if (el.name === 'email') {
+						p.innerText = 'Preencha um email válido';
+					} else {
+						p.innerText = 'Campo obrigatório';
+					}
+
+					el.classList.add('error');
+					div.appendChild(p);
+					el.parentElement.appendChild(div);
+				}
+
+				isValid = false;
+			} 
+
 		});
-		return isValid;
 	}
+	return isValid;
 }

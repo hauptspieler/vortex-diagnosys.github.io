@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,6 +6,11 @@
     text-decoration: none;
     font-family: sans-serif;
 }
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
 h2 {
     margin-top: 32px;
     min-height: 120px;
@@ -13,6 +19,7 @@ h2 {
 li {
     position: relative;
 }
+
 .progress-bar {
     border: 1px solid orange;
     height: 5px;
@@ -21,6 +28,7 @@ li {
 
 .counter-container {
     margin-top: 16px;
+    color: #eee;
 }
 
 .progress {
@@ -34,7 +42,7 @@ li {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 80%;
     max-width: 1020px;
     margin: 0 auto;
     margin-bottom: 40px;
@@ -42,10 +50,14 @@ li {
 
 .survey-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
     max-width: 450px;
     margin: 0 auto;
+}
+
+.survey-container h2 {
+    color: #eee;
 }
 
 ul#survey-list {
@@ -67,13 +79,14 @@ li:hover {
 .choice-item {
     display: flex;
     flex-direction: row;
-
 }
 
 .choice-item p {
     width: 90%;
     display: flex;
     align-items: center;
+    color: #eee;
+    margin-right: 8px;
 }
 
 .question-mark {
@@ -103,12 +116,12 @@ li:hover {
     margin-top: 32px;
     max-width: 450px;
 }
+
 .btn-primary {
     background-color: #28DA62;
     color: white;
     font-weight: bold;
 }
-
 
 .btn:disabled {
     background-color: c4cec7;
@@ -133,6 +146,7 @@ li:hover {
 }
 
 /* HTML Form */
+
 .form-main {
     display: flex;
     justify-content: center;
@@ -148,7 +162,15 @@ li:hover {
 .form-controller {
     display: flex;
     flex-direction: column;
+    width: 100%;
     margin-bottom: 32px;
+}
+
+.form-controller>label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    color: #eee;
+    font-size: 20px;
 }
 
 .error {
@@ -156,6 +178,7 @@ li:hover {
 }
 
 /* Modal */
+
 .modal {
     position: absolute;
     display: flex;
@@ -168,11 +191,12 @@ li:hover {
     animation: show-modal 0.2s;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
 /* Card */
+
 .card {
     display: flex;
     justify-content: space-between;
@@ -184,7 +208,7 @@ li:hover {
     border-radius: 2px;
 }
 
-.card > .button-container  {
+.card>.button-container {
     justify-content: flex-end;
 }
 
@@ -195,72 +219,109 @@ li:hover {
     height: 50%;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "montserrat", sans-serif;
 }
 
 :root {
-    background-color:   #dddddd;
+    background-color: #333;
 }
 
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
 
-
-.contact-section h1{
+.contact-section h1 {
     text-align: center;
     padding-top: 20px;
-    color: rgb(2, 0, 0);
+    color: #eee;
 }
 
-
-
-.contact-form{
+.contact-form {
     max-width: 600px;
-    margin: auto;
+    width: 100%;
+    margin: 32px auto;
     padding: 0 10px;
     overflow: hidden;
 }
 
-.contact-form-text{
+input:-internal-autofill-selected {
+    background-color: transparent;
+}
+
+.contact-form-text {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    margin: 16px 0;
+    margin: 8px 0;
     border: 0;
-    background: #111;
-    padding: 20px 40px;
+    background: transparent;
+    padding: 8px;
     outline: none;
-    color: #f8663a;
-    transition: 0.5s;
+    color: #eee;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, .3);
+    font-size: 16px;
 }
 
-.contact-form-text:hover{
-    box-shadow: 0 0 10px 4px #f8663a;
+.contact-form-text::placeholder {
+    color: #aaa;
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.contact-form-btn{
+.contact-form-btn {
     float: right;
     border: 0;
     background: #d6623e;
-    color: #111;
+    color: white;
     padding: 12px 50px;
     border-radius: 20px;
     cursor: pointer;
     transition: 0.5s;
 }
 
-.contact-form-btn:hover{
+.contact-form-btn:hover {
     background: #f8663a;
+}
+
+.danger {
+    color: rgb(198, 26, 26);
+    margin-left: 8px;
 }
 
 @keyframes show-modal {
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
 }
 
+@keyframes increaseWidth {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Change the white to any color ;) */
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #333 inset !important;
+}
+
+/*Change text in autofill textbox*/
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #eee!important;
+}

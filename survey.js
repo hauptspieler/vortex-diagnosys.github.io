@@ -16,13 +16,15 @@ ul.id = 'survey-list';
 
 let questionStep = 0;
 let currentSurvey;
-let userData = {
+
+let userAnswers = {
+	userInfo: JSON.parse(sessionStorage.getItem('userInfo')),
+	userData: JSON.parse(sessionStorage.getItem('userData')),
 	surveyData: null,
 };
-console.log(userData);
 
 backButton.addEventListener('click', backOneQuestion);
-finish.addEventListener('click', finishSurvey);
+btnFinish.addEventListener('click', finishSurvey);
 
 function init() {
 	updateCounterSurvey();
@@ -219,12 +221,31 @@ function updateOptionsClicked() {
 }
 
 function finishSurvey() {
-	userData.surveyData = {
+	userAnswers.surveyData = {
 		optionClicked,
 		answers,
 	};
 
-	window.location.href = './initForm.html'
+	const body = JSON.stringify(userAnswers)
+	console.log()
+	const config = {
+		method: 'post',
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json'
+		},
+		mode: 'cors',
+		cache: 'default',
+		body,
+	}
+
+	console.log(userAnswers)
+
+	fetch('http://127.0.0.1:3333/full-survey', config)
+	.then(res => console.log(res))
+	.then(res => console.log(res))
+
+	// window.location.href = './initForm.html'
 }
 
 function findBiggerAnswer() {

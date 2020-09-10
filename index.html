@@ -1,42 +1,88 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <title>Dados da empresa</title>
+    
 </head>
 
 <body>
-    <main>
-        <div class="progress-bar" id="progress-bar">
-            <div class="progress" id="progress"></div>
-        </div>
-        <div class="content-container">
-            <div class="counter-container" id="counter-survey"></div>
-            <section class="survery-container" id="app">
-            </section>
-            <div class="button-container" id="action-container">
-                <button class="btn btn-secondary" type="button" id="voltar">Voltar questão</button>
+    <main class="contact-section">
+        <h1>Dados da empresa</h1>
+        <form class="contact-form" method="post" name="contact-form" id="init-contact-form">
+            <div class="form-controller">
+                <label for="nome">Nome</label>
+                <input 
+                    id="nome"
+                    type="text" 
+                    class="contact-form-text" 
+                    placeholder="Seu nome" 
+                    name="nome" 
+                    required
+                />
             </div>
-        </div>
+            <div class="form-controller">
+                <label for="email">Email</label>
+                <input 
+                    id="email"
+                    type="email" 
+                    class="contact-form-text" 
+                    placeholder="Seu email" 
+                    name="email" 
+                    required
+                />
+            </div>
+            <div class="form-controller">
+                <label for="whatsapp"></label>
+                <input
+                    id="whatsapp"
+                    type="text" 
+                    class="contact-form-text" 
+                    placeholder="Seu Whatsapp (DDD)" 
+                    name="whatsapp" 
+                    required
+                />
+            </div>
+            <div class="form-controller">
+                <label for="nomeStartup">Nome da sua Startup</label>
+                <input
+                    id="nomeStartup"
+                    type="text" 
+                    class="contact-form-text" 
+                    placeholder="Nome da sua Startup" 
+                    name="nomeStartup" 
+                    required
+                />
+            </div>
+            <div class="form-controller">
+                <label id="site">Seu site</label>
+                <input
+                    id="site"
+                    type="text" 
+                    class="contact-form-text" 
+                    placeholder="Seu site" 
+                    name="site" 
+                    required
+                />
+            </div>
+            <button 
+                type="button" 
+                class="contact-form-btn" 
+                name="submitbtn" 
+                id="index-form-button"
+            >
+                Próximo passo
+            </button>
+        </form>
     </main>
-    <section class="modal hide" id="modal">
 
-        <div class="card" id="card">
-            <div class="card-content" id="card-content">
-                <h2>Banana</h2>
-            </div>
-            <div class="button-container">
-                <button class="btn btn-primary" type="button" id="finish" disabled>Finalizar</button>
-            </div>
-        </div>
-
-
-    </section>
-    <script src="utils.js"></script>
     <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="utils.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

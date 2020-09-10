@@ -5,7 +5,7 @@ const form = querySelector('#form');
 
 function handleSubmit(event) {
 	event.preventDefault();
-	if (!verifyFormData(btnInitForm)) return
+	if (!verifyFormData(form)) return
 	const {
 		founded,
 		description,
@@ -32,5 +32,5 @@ function handleSubmit(event) {
 		whyDiagnosys: whyDiagnosys.value,
 	};
 	sessionStorage.setItem('userData', JSON.stringify(data));
-	window.location.href = './index.html';
+	window.location.href = './survey.html';
 }
