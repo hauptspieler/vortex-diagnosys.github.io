@@ -241,9 +241,8 @@ function finishSurvey() {
 
 	console.log(userAnswers)
 
-	fetch('http://127.0.0.1:3333/full-survey', config)
-	.then(res => console.log(res))
-	.then(res => console.log(res))
+	fetch('https://vortex-survey.herokuapp.com/full-survey', config)
+	.then(res => window.location.href = './thankyou.html')
 
 	// window.location.href = './initForm.html'
 }

@@ -296,6 +296,14 @@ input:-internal-autofill-selected {
     margin-left: 8px;
 }
 
+.thankyou{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: #eee;
+}
 @keyframes show-modal {
     0% {
         opacity: 0;
@@ -312,6 +320,14 @@ input:-internal-autofill-selected {
     100% {
         width: 100%;
     }
+}
+
+.paragraph {
+    margin: 8px;
+}
+
+.heading {
+    margin-bottom: 32px;;
 }
 
 /* Change the white to any color ;) */
