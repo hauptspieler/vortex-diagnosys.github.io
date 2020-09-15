@@ -23,10 +23,11 @@ li {
 body {
     overflow: scroll;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .progress-bar {
-    border: 1px solid orange;
+    border: 1px solid #458f14;
     height: 5px;
     width: 100%;
 }
@@ -37,7 +38,7 @@ body {
 }
 
 .progress {
-    background-color: orange;
+    background-color: #458f14;
     height: 100%;
     width: 0%;
 }
@@ -73,12 +74,12 @@ li {
     list-style: none;
     cursor: pointer;
     margin-bottom: 16px;
-    border: 2px solid orange;
+    border: 2px solid #458f14;
     transition: all .1s;
 }
 
 li:hover {
-    background-color: rgba(255, 166, 0, 0.153);
+    background-color: #64d11b33;
 }
 
 .choice-item {
@@ -98,7 +99,7 @@ li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: orange;
+    background-color: #458f14;
     width: 10%;
     min-height: 50px;
     height: auto;
@@ -111,7 +112,8 @@ li:hover {
     border: none;
     cursor: pointer;
     background-color: transparent;
-    padding: 10px 20px
+    padding: 10px 20px;
+    border-radius: 20px;
 }
 
 .button-container {
@@ -123,9 +125,10 @@ li:hover {
 }
 
 .btn-primary {
-    background-color: #28DA62;
+    background-color: #458f14;
     color: white;
     font-weight: bold;
+    
 }
 
 .btn:disabled {
@@ -203,6 +206,7 @@ li:hover {
 /* Card */
 
 .card {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -284,16 +288,20 @@ input:-internal-autofill-selected {
 .contact-form-btn {
     float: right;
     border: 0;
-    background: #d6623e;
+    background: #458f14;
     color: white;
     padding: 12px 50px;
     border-radius: 20px;
     cursor: pointer;
     transition: 0.5s;
+    font-size: 16px;
+    font-weight: 900;
+    width: 100%;
+    margin-top: 40px;
 }
 
 .contact-form-btn:hover {
-    background: #f8663a;
+    background: #64d11b;
 }
 
 .danger {
@@ -308,6 +316,34 @@ input:-internal-autofill-selected {
     align-items: center;
     height: 100vh;
     color: #eee;
+}
+
+.paragraph {
+    margin: 8px;
+}
+
+.heading {
+    margin-bottom: 32px;
+    ;
+}
+
+.loading {
+    position: absolute;
+    top: 50px;
+    width: 60px;
+    height: 60px;
+}
+
+/* Change the white to any color ;) */
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #333 inset !important;
+}
+
+/*Change text in autofill textbox*/
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #eee!important;
 }
 
 @keyframes show-modal {
@@ -328,23 +364,3 @@ input:-internal-autofill-selected {
     }
 }
 
-.paragraph {
-    margin: 8px;
-}
-
-.heading {
-    margin-bottom: 32px;
-    ;
-}
-
-/* Change the white to any color ;) */
-
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #333 inset !important;
-}
-
-/*Change text in autofill textbox*/
-
-input:-webkit-autofill {
-    -webkit-text-fill-color: #eee!important;
-}

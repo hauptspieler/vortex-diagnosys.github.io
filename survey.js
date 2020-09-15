@@ -221,6 +221,7 @@ function updateOptionsClicked() {
 }
 
 function finishSurvey() {
+	querySelector('#loading').classList.remove('hide')
 	userAnswers.surveyData = {
 		optionClicked,
 		answers,
