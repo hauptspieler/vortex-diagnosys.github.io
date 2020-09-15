@@ -20,6 +20,11 @@ li {
     position: relative;
 }
 
+body {
+    overflow: scroll;
+    height: 100vh;
+}
+
 .progress-bar {
     border: 1px solid orange;
     height: 5px;
@@ -232,9 +237,9 @@ li:hover {
 .contact-section {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+    padding-bottom: 32px;
 }
 
 .contact-section h1 {
@@ -248,7 +253,7 @@ li:hover {
     width: 100%;
     margin: 32px auto;
     padding: 0 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 input:-internal-autofill-selected {
@@ -296,7 +301,7 @@ input:-internal-autofill-selected {
     margin-left: 8px;
 }
 
-.thankyou{
+.thankyou {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -304,6 +309,7 @@ input:-internal-autofill-selected {
     height: 100vh;
     color: #eee;
 }
+
 @keyframes show-modal {
     0% {
         opacity: 0;
@@ -327,7 +333,8 @@ input:-internal-autofill-selected {
 }
 
 .heading {
-    margin-bottom: 32px;;
+    margin-bottom: 32px;
+    ;
 }
 
 /* Change the white to any color ;) */
