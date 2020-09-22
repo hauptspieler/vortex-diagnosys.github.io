@@ -14,7 +14,7 @@ async function getUsersFromFirebase() {
 		cache: 'default',
 	};
 	const respPending = await fetch(
-		'http://127.0.0.1:3333/full-survey',
+		'https://vortex-survey.herokuapp.com/full-survey',
 		config
 	);
 	const response = await respPending.json();
