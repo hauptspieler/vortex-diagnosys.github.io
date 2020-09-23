@@ -33,7 +33,7 @@ function verifyFormData(container) {
 	const array = Array.from(container.elements);
 	let isValid = true;
 	if (!container.checkValidity()) {
-		// debugger
+
 		array.map((el) => {
 			if (el.required || !el.validity.valid) {
 				if(el.validity.valid) {
@@ -44,17 +44,22 @@ function verifyFormData(container) {
 					}
 					return
 				}
+				
 				if (!el.classList.contains('error')) {
 					const div = document.createElement('div');
 					const p = document.createElement('p');
 
 					p.classList.add('danger')
 					div.className = 'error-container'
-					if (el.name === 'email') {
+					if (el.type === 'email') {
 						p.innerText = 'Preencha um email válido';
+					} else if (el.type === 'tel') {
+						p.innerText = 'Preencha um telefone vaildo'
 					} else {
 						p.innerText = 'Campo obrigatório';
 					}
+					console.log(el.type)
+					
 
 					el.classList.add('error');
 					div.appendChild(p);
