@@ -24,7 +24,7 @@ let userAnswers = {
 };
 
 backButton.addEventListener('click', backOneQuestion);
-btnFinish.addEventListener('click', finishSurvey);
+// btnFinish.addEventListener('click', );
 
 function init() {
 	updateCounterSurvey();
@@ -76,9 +76,10 @@ function clearCurrentSurvey() {
 }
 
 function goToNextQuestion(event) {
-	// console.log(event);
+
 	if (getSurveyStep() >= data.length - 1) {
 		renderModal();
+		finishSurvey()
 		return;
 	}
 	let dataNumber;
@@ -228,7 +229,7 @@ function finishSurvey() {
 	};
 
 	const body = JSON.stringify(userAnswers)
-	console.log()
+
 	const config = {
 		method: 'post',
 		headers: {
@@ -239,8 +240,6 @@ function finishSurvey() {
 		cache: 'default',
 		body,
 	}
-
-	console.log(userAnswers)
 
 	fetch('https://vortex-survey.herokuapp.com/full-survey', config)
 	.then(res => window.location.href = './thankyou.html')
