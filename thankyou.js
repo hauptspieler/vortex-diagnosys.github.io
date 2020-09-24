@@ -1,3 +1,4 @@
-setTimeout(() => {
-    window.location.href = 'https://startadora.com'
-}, 500)
+
+document.getElementById("redirectBtn").onclick = function () {
+    location.href = "https://startadora.com/";
+}
