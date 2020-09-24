@@ -40,7 +40,7 @@
                 <label for="whatsapp"></label>
                 <input
                     id="whatsapp"
-                    type="number" 
+                    type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
                     class="contact-form-text" 
                     placeholder="Seu Whatsapp (DDD)" 
                     name="whatsapp" 
