@@ -28,7 +28,7 @@ body {
 
 .progress-bar {
     border: 1px solid #458f14;
-    height: 5px;
+    height: 13px;
     width: 100%;
 }
 
@@ -304,6 +304,10 @@ input:-internal-autofill-selected {
     background: #64d11b;
 }
 
+select.contact-form-text {
+    background-color: #333;
+}
+
 .danger {
     color: rgb(198, 26, 26);
     margin-left: 8px;
@@ -338,6 +342,7 @@ input:-internal-autofill-selected {
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #333 inset !important;
+    box-shadow: 0 0 0 30px #333 inset;
 }
 
 /*Change text in autofill textbox*/
