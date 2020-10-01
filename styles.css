@@ -27,18 +27,19 @@ body {
 }
 
 .progress-bar {
-    border: 1px solid #458f14;
+    border: 1px solid #8f1c7fff;
     height: 13px;
     width: 100%;
 }
 
 .counter-container {
     margin-top: 16px;
-    color: #eee;
+    font-weight: 300;
+    color: #fb5b1eff;
 }
 
 .progress {
-    background-color: #458f14;
+    background-color: #d33862ff;
     height: 100%;
     width: 0%;
 }
@@ -63,7 +64,7 @@ body {
 }
 
 .survey-container h2 {
-    color: #eee;
+    color: #fb5b1eff;
 }
 
 ul#survey-list {
@@ -74,12 +75,12 @@ li {
     list-style: none;
     cursor: pointer;
     margin-bottom: 16px;
-    border: 2px solid #458f14;
+    border: 2px solid #d33862ff;
     transition: all .1s;
 }
 
 li:hover {
-    background-color: #64d11b33;
+    background-color: #8f1c7fff;
 }
 
 .choice-item {
@@ -99,7 +100,7 @@ li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #458f14;
+    background-color: #d33862ff;
     width: 10%;
     min-height: 50px;
     height: auto;
@@ -125,7 +126,7 @@ li:hover {
 }
 
 .btn-primary {
-    background-color: #458f14;
+    background-color: #8f1c7f;
     color: white;
     font-weight: bold;
     
@@ -136,7 +137,7 @@ li:hover {
 }
 
 .btn-secondary {
-    background-color: #4A90D4;
+    background-color: #fb5b1eff;
     color: white;
     font-weight: bold;
 }
@@ -176,8 +177,8 @@ li:hover {
 
 .form-controller>label {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
-    color: #eee;
+    font-weight: 600;
+    color: #d33862ff;
     font-size: 20px;
 }
 
@@ -249,7 +250,7 @@ li:hover {
 .contact-section h1 {
     text-align: center;
     padding-top: 20px;
-    color: #eee;
+    color: #fb5b1eff;
 }
 
 .contact-form {
@@ -288,7 +289,7 @@ input:-internal-autofill-selected {
 .contact-form-btn {
     float: right;
     border: 0;
-    background: #458f14;
+    background: #8f1c7f;
     color: white;
     padding: 12px 50px;
     border-radius: 20px;
@@ -301,7 +302,7 @@ input:-internal-autofill-selected {
 }
 
 .contact-form-btn:hover {
-    background: #64d11b;
+    background:  #d33862ff;
 }
 
 select.contact-form-text {
@@ -309,7 +310,7 @@ select.contact-form-text {
 }
 
 .danger {
-    color: rgb(198, 26, 26);
+    color: #fb5b1eff;
     margin-left: 8px;
 }
 
