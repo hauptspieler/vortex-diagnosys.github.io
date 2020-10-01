@@ -23,10 +23,6 @@ function addEventListenersToInputs() {
 const phoneInput = document
 	.querySelector('#whatsapp')
 	
-phoneInput.addEventListener('keyup', function (e) {
-	console.log(e.key)
-	this.value =  phoneValidator(e.target.value, e.key)
-});
 
 function handleSubmit(event) {
 	event.preventDefault();

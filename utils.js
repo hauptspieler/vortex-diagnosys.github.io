@@ -71,46 +71,38 @@ function verifyFormData(container) {
 	return isValid;
 }
 
-function phoneValidator(string, keyName) {
-	let output = '';
-	if (string === '') return output;
-	if (keyName === 'Backspace') return string;
-	if (keyName === 'ArrowLeft') return string;
-	if (keyName === 'ArrowRight') return string;
+function mascara(input, funcaoFormatadora) {
+    // pegar o valor - OK
+  // formatar com a mascara
+  // escrever no inpout o valor formatado
+  setTimeout(function () {
+      var valorFormatado = funcaoFormatadora(input.value);
+        if (valorFormatado != input.value) {
+            input.value = valorFormatado;
+        }
+  
+      console.log(input.value);
+    }, 1);
+}
 
-	if (string.length < 9 && string.includes('-')) {
-		string.replace('-', '');
-	}
-
-	if (!string.includes('(')) {
-		output = `(${string.substr(0, 1)}`;
-	}
-
-	if (string.includes('(') && !string.includes(')')) {
-		output = `${string.substr(0, 3)})`;
-	}
-
-	if (string.includes('(') && string.includes(')')) {
-		output = string;
-	}
-
-	if (string.includes('(') && string.includes(')')) {
-		const ddd = string.substr(0, 4);
-		if (ddd.length === 4 && ddd.includes('(') && ddd.includes(')')) {
-		}
-	}
-
-	if (string.includes('-')) {
-		output = string;
-	}
-
-	if (string.length >= 8 && !string.includes('-')) {
-		output = `${string.substr(0, 8)}-`;
-	}
-	if (string.length === 14 && string.includes('-')) {
-		string = string.replace('-', '')
-		output = `${string.substr(0, 9)}-${string.substr(9, 13)}`;
-	}
-
-	return output;
+function formatarTelefone(v) {
+    var r = v.replace(/\D/g,"");
+    r = r.replace(/^0/,"");
+    if (r.length > 10) {
+        // 11+ digits. Format as 5+4.
+        r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/,"($1) $2-$3");
+    }
+    else if (r.length > 5) {
+        // 6..10 digits. Format as 4+4
+        r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/,"($1) $2-$3");
+    }
+    else if (r.length > 2) {
+        // 3..5 digits. Add (0..)
+        r = r.replace(/^(\d\d)(\d{0,5})/,"($1) $2");
+    }
+    else {
+        // 0..2 digits. Just add (0
+        r = r.replace(/^(\d*)/, "($1");
+    }
+    return r;
 }

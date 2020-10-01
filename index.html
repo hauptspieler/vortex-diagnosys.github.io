@@ -40,13 +40,15 @@
                 <label for="whatsapp">Telefone</label>
                 <input
                     id="whatsapp"
-                    type="number" 
+                    type="text" 
                     class="contact-form-text" 
                     placeholder="Seu Whatsapp (DDD)" 
                     name="whatsapp" 
                     required
                     maxlength="14"
                     minlength="13"
+                    onkeypress="mascara(this, formatarTelefone) "
+                    onblur="mascara(this, formatarTelefone);"
                 />
             </div>
             <div class="form-controller">
