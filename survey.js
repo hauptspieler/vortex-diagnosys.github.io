@@ -228,6 +228,9 @@ function finishSurvey() {
 		answers,
 	};
 
+	localStorage.setItem("opçoes", JSON.stringify(userAnswers.surveyData.optionClicked));
+	console.log(userAnswers)
+
 	const body = JSON.stringify(userAnswers)
 
 	const config = {
@@ -241,7 +244,7 @@ function finishSurvey() {
 		body,
 	}
 
-	fetch('https://vortex-survey.herokuapp.com/full-survey', config)
+	fetch('https://vortex-survey.herokuapp.com/full-survey', config)  /****************************************************************************** */
 	.then(res => window.location.href = './thankyou.html')
 
 	// window.location.href = './initForm.html'
@@ -258,22 +261,11 @@ function findBiggerAnswer() {
 	return higerOption;
 }
 
-function showModalSystemFeedback() {
-	const mostClicked = findBiggerAnswer();
-	const modal = querySelector('#modal');
-	console.log(modal.classList.contains('hide'));
-	if (modal.classList.contains('hide')) {
-		modal.classList.remove('hide');
-	}
-	querySelector('#card-content').innerText = finalAnswers[mostClicked];
-	backButton.style.display = 'none';
-}
-
 function renderModal() {
 	incrementSurveyStep();
 	updateCounterSurvey();
 	clearCurrentSurvey();
-	showModalSystemFeedback();
+	
 }
 
 init();
