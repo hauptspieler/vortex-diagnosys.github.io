@@ -5,21 +5,28 @@ const inputs = Array.from(querySelectorAll('input'));
 btnInitForm.addEventListener('click', handleSubmit);
 
 function addEventListenersToInputs() {
+	function removeErrorOnChange(event) {
+		const element = event.target;
+		if (element.classList.contains('error')) {
+			element.classList.remove('error');
+			const parentEl = element.parentElement;
+			const errorDiv = parentEl.lastElementChild;
+			parentEl.removeChild(errorDiv);
+		}
+	}
 
-    function removeErrorOnChange(event)  {
-        const element = event.target
-        if (element.classList.contains('error')) {
-            element.classList.remove('error')
-            const parentEl = element.parentElement;
-            const errorDiv = parentEl.lastElementChild
-            parentEl.removeChild(errorDiv)
-        }
-    }
-
-    inputs.map((el) => {
-        el.addEventListener('keyup',removeErrorOnChange)
-    })
+	inputs.map((el) => {
+		el.addEventListener('keyup', removeErrorOnChange);
+	});
 }
+
+const phoneInput = document
+	.querySelector('#whatsapp')
+	
+phoneInput.addEventListener('keyup', function (e) {
+	console.log(e.key)
+	this.value =  phoneValidator(e.target.value, e.key)
+});
 
 function handleSubmit(event) {
 	event.preventDefault();
@@ -45,4 +52,4 @@ function handleSubmit(event) {
 	console.log('chegou aqui');
 }
 
-addEventListenersToInputs()
+addEventListenersToInputs();
