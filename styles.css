@@ -301,6 +301,23 @@ input:-internal-autofill-selected {
     margin-top: 40px;
 }
 
+.contact-form-btn2{
+    float: right;
+    border: 0;
+    background: #8f1c7f;
+    color: white;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 16px;
+    font-weight: 900;
+    width: 30%;
+    margin-top: 40px;
+    margin-left: 470px;
+    
+}
+
 .contact-form-btn:hover {
     background:  #d33862ff;
 }
@@ -338,6 +355,25 @@ select.contact-form-text {
     width: 60px;
     height: 60px;
 }
+
+
+#resposta {
+    font-size: 20px;
+    font-weight: 500;
+    width: 80%;
+    margin-bottom: 60px;
+    margin-top: 110px;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Change the white to any color ;) */
 
