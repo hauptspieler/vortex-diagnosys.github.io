@@ -501,3 +501,12 @@ let finalAnswers = {
 	d: 'Você está na fase de TRAÇÃO! Agora você precisa consolidar todoas as informações que você já tem sobre os seus clientes para que você possa construir um funil de vendas eficiente com alta taxa de conversão. Também é um bom momento para você criar um dashboard de gestão orientado a dados onde você poderá observar as métricas e indicadores corretos para acompanhar se sua startup está crescendo de forma sólida. Cuidado para não queimar dinheiro com estratégias de crescimento que não estão validadas, que não funcionam para o seu modelo ou mesmo construir aquele balde furado cheio de leads no topo do funil, mas que saem quase todos ao longo do processo. (Esse é o motivo Nº 1 pelo qual startups quebram nesta fase!) Quer ajuda para construir uma estratégia de tração eficiente baseada em dados e validação? Fale conosco no Instagram! @startadora',
 	e: 'Você está na fase de EXPANSÃO! Você está em um bom momento para começar a captar grandes investimentos, como uma série A. Para isso você precisa estar com toda a sua empresa organizada para que você possa mostrar o máximo de previsibilidade com o mínimo de risco para o investidor. Cuidado com todo o seu backoffice (partes legal, jurídica, fiscal e contábil da empresa). Para um investimento desse nível, qualquer investidor profissional irá analisar tudo isso minuciosamente e se você não passar na análise, nada de investimento (Esse é o motivo Nº 1 pelo qual startups quebram nesta fase!) Quer ajuda para organizar seu negócio para uma captação de investimentos? Fale conosco no Instagram! @startadora',
 };
+
+let resultDisplay = {
+	a: "Ideação",
+	b: "Pré-Operação",
+	c: "Operação",
+	d: "Tração",
+	e: "Expansão",
+};
+

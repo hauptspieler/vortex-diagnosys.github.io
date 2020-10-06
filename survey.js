@@ -223,9 +223,14 @@ function updateOptionsClicked() {
 
 function finishSurvey() {
 	querySelector('#loading').classList.remove('hide')
+	
+	result = getResultFeedback();
+	console.log(result);
+
 	userAnswers.surveyData = {
 		optionClicked,
 		answers,
+		result,
 	};
 
 	localStorage.setItem("opçoes", JSON.stringify(userAnswers.surveyData.optionClicked));
@@ -267,5 +272,33 @@ function renderModal() {
 	clearCurrentSurvey();
 	
 }
+
+
+
+/* ////////////////////////  */ 
+
+function getResultFeedback() {
+	const mostClicked = findBiggerAnswer();
+
+	     return  resultDisplay[mostClicked]
+
+}
+
+
+function findBiggerAnswer() {
+    let optionClicked = JSON.parse(localStorage.getItem("opçoes") )
+	let maxClicked = optionClicked.a;
+	let higherOption = Object.keys(optionClicked)[0];
+	for (option in optionClicked) {
+		if (optionClicked[option] > maxClicked) {
+			higherOption = option;
+		}
+	}
+	return higherOption;
+}
+
+
+
+
 
 init();

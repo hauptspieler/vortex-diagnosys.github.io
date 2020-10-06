@@ -58,7 +58,8 @@ const renderUserData = (user) => {
 	} = userData;
 
 	let answersHtml = '<h2>Q&A</h2>';
-	let optionClicked = '';
+    let optionClicked = '';
+    
 
 	for (const el in surveyData.answers) {
 		const answer = surveyData.answers[el];
