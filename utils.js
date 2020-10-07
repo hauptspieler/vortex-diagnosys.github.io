@@ -72,7 +72,7 @@ function verifyFormData(container) {
 }
 
 
-///////////// mascara de nome (com JQUERY)   /////////////////////
+///////////// mascara de nome (com JQUERY)  /////////////////////
 
 $("#nameId").keyup(function(e) {
 	var previousKey = this.value.substring(this.value.length-2,this.value.length-1);
