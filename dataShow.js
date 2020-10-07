@@ -19,7 +19,8 @@ async function getUsersFromFirebase() {
 	);
 	const response = await respPending.json();
 
-	userInfoArray.push(...convertUserInfoObjectToArray(response));
+    userInfoArray.push(...convertUserInfoObjectToArray(response));
+    console.log(userInfoArray)
 	userInfoArray.map(
 		(user) => (usersInfoContainer.innerHTML += renderUserData(user))
 	);
@@ -118,7 +119,7 @@ const renderUserData = (user) => {
                         <strong>founded:</strong> <span class="user-data-answer">${founded}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>golas:</strong> <span class="user-data-answer">${goals}</span>
+                        <strong>goals:</strong> <span class="user-data-answer">${goals}</span>
                     </div>
                     <div class="userDataOption">
                         <strong>how did you find our diagnosys:</strong> <span class="user-data-answer">${howDiagnosys}</span>
@@ -128,6 +129,9 @@ const renderUserData = (user) => {
                     </div>
                     <div class="userDataOption">
                         <strong>aceleratedStartup:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
+                    </div>
+                    <div class="userDataOption">
+                        <strong>FaseMaturidade:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
                     </div>
                 </section>
                 <section class="survey-data">
