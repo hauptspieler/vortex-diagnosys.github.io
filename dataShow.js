@@ -20,7 +20,9 @@ async function getUsersFromFirebase() {
 	const response = await respPending.json();
 
     userInfoArray.push(...convertUserInfoObjectToArray(response));
+    console.log("--------------------------------------------------------------------------------------------------------------------------------")
     console.log(userInfoArray)
+    console.log("--------------------------------------------------------------------------------------------------------------------------------")
 	userInfoArray.map(
 		(user) => (usersInfoContainer.innerHTML += renderUserData(user))
 	);
