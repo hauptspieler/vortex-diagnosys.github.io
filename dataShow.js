@@ -96,6 +96,8 @@ const renderUserData = (user) => {
                     <div><strong>nome da startup:</strong> <span>${userInfo.nomeStartup}</span></div>
                     <div><strong>site:</strong> <span>${userInfo.site}</span></div>
                     <div><strong>telefone:</strong> <span>${userInfo.whatsapp}</span></div>
+                    <div><strong>Fase:</strong> <span>${surveyData.result}</span></div>
+
                 </div>
                 <button class="btn btn-primary" id="${uuid}" >VER DETALHES</button>
             </header>
@@ -132,9 +134,7 @@ const renderUserData = (user) => {
                     <div class="userDataOption">
                         <strong>aceleratedStartup:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
                     </div>
-                    <div class="userDataOption">
-                        <strong>FaseMaturidade:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
-                    </div>
+                    
                 </section>
                 <section class="survey-data">
                     ${answersHtml}
