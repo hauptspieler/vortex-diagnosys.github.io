@@ -72,7 +72,7 @@ function verifyFormData(container) {
 }
 
 
-///////////// mascara de nome (com JQUERY)  /////////////////////
+///////////// MASCARA DE NOME JQUERY /////////////////////
 
 $("#nameId").keyup(function(e) {
 	var previousKey = this.value.substring(this.value.length-2,this.value.length-1);
@@ -86,7 +86,7 @@ $("#nameId").keyup(function(e) {
 
 
 
-//////////////     mascara de telefone   ////////////////
+//////////////     MASCARA REGEX DE TELEFONE   ////////////////
 
 function mascara(input, funcaoFormatadora) {
     // pegar o valor - OK
@@ -126,3 +126,14 @@ function formatarTelefone(v) {
 
 //////////////////////////////////////////////////////////////////////
 
+////////// MASCARA DE STARTUP JQUERY/////////
+
+$("#nomeStartup").keyup(function(e) {
+	var previousKey = this.value.substring(this.value.length-2,this.value.length-1);
+	//check if previous key is a space, or for the first letter and if it is a valid letter
+	if ((previousKey == " " || this.value.length == 1) && (e.which >= 65 && e.which <= 90)) {
+		var newVal = this.value.substring(0, this.value.length-1);        
+		this.value =newVal + String.fromCharCode(e.keyCode);
+	}
+  });
+  /////////////////////////////////////////////////////////////////////////////
