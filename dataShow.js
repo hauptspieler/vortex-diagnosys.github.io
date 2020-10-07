@@ -20,9 +20,7 @@ async function getUsersFromFirebase() {
 	const response = await respPending.json();
 
     userInfoArray.push(...convertUserInfoObjectToArray(response));
-    console.log("--------------------------------------------------------------------------------------------------------------------------------")
-    console.log(userInfoArray)
-    console.log("--------------------------------------------------------------------------------------------------------------------------------")
+    
 	userInfoArray.map(
 		(user) => (usersInfoContainer.innerHTML += renderUserData(user))
 	);
@@ -32,7 +30,7 @@ async function getUsersFromFirebase() {
 }
 
 function convertUserInfoObjectToArray(data) {
-	console.log(data);
+	
 	const userArray = [];
 
 	for (let a in data) {
@@ -93,9 +91,9 @@ const renderUserData = (user) => {
                     <strong>Email:</strong> <span>${userInfo.email}</span>
                 </p>
                 <div>
-                    <div><strong>nome da startup:</strong> <span>${userInfo.nomeStartup}</span></div>
-                    <div><strong>site:</strong> <span>${userInfo.site}</span></div>
-                    <div><strong>telefone:</strong> <span>${userInfo.whatsapp}</span></div>
+                    <div><strong>Nome da startup:</strong> <span>${userInfo.nomeStartup}</span></div>
+                    <div><strong>Site:</strong> <span>${userInfo.site}</span></div>
+                    <div><strong>Telefone:</strong> <span>${userInfo.whatsapp}</span></div>
                     <div><strong>Fase:</strong> <span>${surveyData.result}</span></div>
 
                 </div>
@@ -151,7 +149,7 @@ const renderUserData = (user) => {
 };
 
 function toggleInfo(event) {
-	console.log(event.target.id);
+	
 	const section = document.querySelector(`div#${event.target.id}`);
 	if (section.classList.contains('toggle')) {
 		section.classList.remove('toggle');

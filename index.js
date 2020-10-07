@@ -45,7 +45,7 @@ function handleSubmit(event) {
 	const userDataJson = JSON.stringify(userData);
 	sessionStorage.setItem('userInfo', userDataJson);
 	window.location.href = './finalForm.html';
-	console.log('chegou aqui');
+	
 }
 
 addEventListenersToInputs();
