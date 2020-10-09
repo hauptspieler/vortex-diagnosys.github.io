@@ -97,8 +97,7 @@ function mascara(input, funcaoFormatadora) {
         if (valorFormatado != input.value) {
             input.value = valorFormatado;
         }
-  
-      console.log(input.value);
+
     }, 1);
 }
 
@@ -137,3 +136,4 @@ $("#nomeStartup").keyup(function(e) {
 	}
   });
   /////////////////////////////////////////////////////////////////////////////
+

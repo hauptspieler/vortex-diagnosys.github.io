@@ -66,13 +66,14 @@
             <div class="form-controller">
                 <label id="site">Seu site</label>
                 <input
-                    id="site"
-                    type="text" 
+                    id="jqueryMask"
+                    type="url" 
                     class="contact-form-text" 
                     placeholder="Seu site" 
                     name="site" 
-                    required
+                    data-inputmask-regex="^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$  "             
                 />
+   
             </div>
             <button 
                 type="button" 
@@ -88,6 +89,19 @@
     <script src="data.js"></script>
     <script src="utils.js"></script>
     <script src="index.js"></script>
+    <script src="jquery.inputmask.js"></script>
+    <script>
+
+ $(document).ready(
+
+        function(){
+        $("#jqueryMask").inputmask()
+        }
+
+ )
+
+
+    </script>
 </body>
 
 </html>
