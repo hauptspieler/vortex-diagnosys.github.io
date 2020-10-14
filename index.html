@@ -70,14 +70,14 @@
                     class="contact-form-text jqueryMask"
                     placeholder="Seu site" 
                     name="site" 
-                    data-inputmask-regex="https://(?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)?"  
+                    data-inputmask-regex="^((https)?://)?[a-z0-9]+.+.[a-z]+(/[a-zA-Z0-9#]+/?)*$"  
                     required
                     />  
                 
             </div>
             <button 
                 type="button" 
-                class="contact-form-btn" 
+                class="contact-form-btn"        
                 name="submitbtn" 
                 id="index-form-button"
             >
