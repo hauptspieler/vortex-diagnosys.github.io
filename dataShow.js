@@ -79,7 +79,11 @@ const renderUserData = (user) => {
 		optionClicked += `<div class="options">${el}: ${surveyData.optionClicked[el]}</div>`;
 	}
 
-	const uuid = `hash${userInfo.whatsapp}${Date.now()}`;
+ 
+    let phoneNumberCleaned = cleanPhoneNumber(userInfo.whatsapp);
+    //////////////////////////////////////////////////////////////
+    
+	const uuid = `hash${phoneNumberCleaned}${Date.now()}`;
 
 	const component = `
         <div class="userinfo-container" data-toggle="collapsed">
@@ -149,7 +153,7 @@ const renderUserData = (user) => {
 };
 
 function toggleInfo(event) {
-	
+	console.log(event.target.id)
 	const section = document.querySelector(`div#${event.target.id}`);
 	if (section.classList.contains('toggle')) {
 		section.classList.remove('toggle');
@@ -157,3 +161,17 @@ function toggleInfo(event) {
 		section.classList.add('toggle');
 	}
 }
+  /////////////////////////////////////////////
+   // formata numero de telefone 
+    
+   function cleanPhoneNumber(phoneNumber){
+       
+    phoneNumberCleaned = phoneNumber.replace('(', '')
+    phoneNumberCleaned = phoneNumberCleaned.replace(')', '')
+    phoneNumberCleaned = phoneNumberCleaned.replace(' ', '')
+    phoneNumberCleaned = phoneNumberCleaned.replace('-', '')
+
+    return phoneNumberCleaned
+
+}
+/////////////////////////////////////////////////
