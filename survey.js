@@ -249,7 +249,7 @@ function finishSurvey() {
 		body,
 	}
 
-	fetch('https://vortex-survey-api.herokuapp.com/full-survey', config)  /****************************************************************************** */
+	fetch('https://vortex-survey-api.herokuapp.com/full-survey', config)  
 	.then(res => window.location.href = './thankyou.html')
 
 	// window.location.href = './initForm.html'
@@ -287,7 +287,7 @@ function getResultFeedback() {
 
 function findBiggerAnswer() {
     let optionClicked = JSON.parse(localStorage.getItem("opçoes") )
-	let maxClicked = optionClicked.a;
+	let maxClicked = optionClicked;
 	let higherOption = Object.keys(optionClicked)[0];
 	for (option in optionClicked) {
 		if (optionClicked[option] > maxClicked) {

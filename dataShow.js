@@ -77,7 +77,12 @@ const renderUserData = (user) => {
 
 	for (const el in surveyData.optionClicked) {
 		optionClicked += `<div class="options">${el}: ${surveyData.optionClicked[el]}</div>`;
-	}
+    }
+    
+
+    // let resposta1 = surveyData.answers.answer;
+
+    // console.log('resposta1')
 
  
     let phoneNumberCleaned = cleanPhoneNumber(userInfo.whatsapp);
@@ -136,6 +141,8 @@ const renderUserData = (user) => {
                     <div class="userDataOption">
                         <strong>aceleratedStartup:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
                     </div>
+
+                   
                     
                 </section>
                 <section class="survey-data">
@@ -144,6 +151,9 @@ const renderUserData = (user) => {
                         <h2>Opções clicadas</h2>
                         ${optionClicked}
                     </div>
+                    <div class="userDataOption">
+                    <strong>QUESTÃO 1:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
+                </div>
                 </section>
             </div>
         </div>
