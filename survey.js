@@ -286,7 +286,7 @@ function getResultFeedback() {
 
 
 function findBiggerAnswer() {
-    let optionClicked = JSON.parse(sessionStorage.getItem("opcoes") )
+    let optionClicked = JSON.parse(sessionStorage.getItem("opcoes") );
 	let maxClicked = optionClicked.a;
 	console.log(optionClicked.a)
 	let higherOption = Object.keys(optionClicked)[0];
