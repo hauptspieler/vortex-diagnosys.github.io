@@ -236,7 +236,6 @@ function finishSurvey() {
 		result,
 	};
 
-	debugger;
 
 	console.log(userAnswers)
 
