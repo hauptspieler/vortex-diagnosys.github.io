@@ -233,7 +233,7 @@ function finishSurvey() {
 		result,
 	};
 
-	localStorage.setItem("opçoes", JSON.stringify(userAnswers.surveyData.optionClicked));
+	sessionStorage.setItem("opçoes", JSON.stringify(userAnswers.surveyData.optionClicked));
 	console.log(userAnswers)
 
 	const body = JSON.stringify(userAnswers)
@@ -286,7 +286,7 @@ function getResultFeedback() {
 
 
 function findBiggerAnswer() {
-    let optionClicked = JSON.parse(localStorage.getItem("opçoes") )
+    let optionClicked = JSON.parse(sessionStorage.getItem("opçoes") )
 	let maxClicked = optionClicked.a;
 	console.log(optionClicked.a)
 	let higherOption = Object.keys(optionClicked)[0];
