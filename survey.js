@@ -224,6 +224,9 @@ function updateOptionsClicked() {
 function finishSurvey() {
 	querySelector('#loading').classList.remove('hide')
 	
+	sessionStorage.setItem("opçoes", JSON.stringify(optionClicked));
+
+
 	result = getResultFeedback();
 	console.log(result);
 
@@ -233,7 +236,8 @@ function finishSurvey() {
 		result,
 	};
 
-	sessionStorage.setItem("opçoes", JSON.stringify(userAnswers.surveyData.optionClicked));
+	debugger;
+
 	console.log(userAnswers)
 
 	const body = JSON.stringify(userAnswers)
