@@ -146,14 +146,7 @@ const renderUserData = (user) => {
                     
                 </section>
                 <section class="survey-data">
-                    ${answersHtml}
-                    <div class="optionClicked">
-                        <h2>Opções clicadas</h2>
-                        ${optionClicked}
-                    </div>
-                    <div class="userDataOption">
-                    <strong>QUESTÃO 1:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
-                </div>
+                    ${answersHtml}   
                 </section>
             </div>
         </div>
