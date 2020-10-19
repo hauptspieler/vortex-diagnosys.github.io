@@ -15,7 +15,7 @@ function showModalSystemFeedback() {
 
 
 function findBiggerAnswer() {
-    let optionClicked = JSON.parse(localStorage.getItem("opçoes") )
+    let optionClicked = JSON.parse(sessionStorage.getItem("opçoes") )
 	let maxClicked = optionClicked.a;
 	let higherOption = Object.keys(optionClicked)[0];
 	for (option in optionClicked) {
