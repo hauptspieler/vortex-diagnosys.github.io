@@ -112,34 +112,34 @@ const renderUserData = (user) => {
                 <section class="userData" id=user-data>
                     <h2>Sobre a startup</h2>
                     <div class="userDataOption">
-                        <strong>Startup acelerada:</strong> <span class="user-data-answer">${aceleratedStartup}</span>
+                        <strong>Passou por aceleração:</strong> <span class="user-data-answer">${aceleratedStartup}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>business model:</strong> <span class="user-data-answer">${businessModel}</span>
+                        <strong>Modelo de Negócio:</strong> <span class="user-data-answer">${businessModel}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>business type:</strong> <span class="user-data-answer">${businessType}</span>
+                        <strong>Tipo de venda:</strong> <span class="user-data-answer">${businessType}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>dedication:</strong> <span class="user-data-answer">${dedication}</span>
+                        <strong>Dedicação do time:</strong> <span class="user-data-answer">${dedication}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>description:</strong> <span class="user-data-answer">${description}</span>
+                        <strong>Descrição do negócio:</strong> <span class="user-data-answer">${description}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>founded:</strong> <span class="user-data-answer">${founded}</span>
+                        <strong>Quando foi criada:</strong> <span class="user-data-answer">${founded}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>goals:</strong> <span class="user-data-answer">${goals}</span>
+                        <strong>Até onde querem levar:</strong> <span class="user-data-answer">${goals}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>how did you find our diagnosys:</strong> <span class="user-data-answer">${howDiagnosys}</span>
+                        <strong>Como ficou sabendo do diagnóstico:</strong> <span class="user-data-answer">${howDiagnosys}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>why do you want to have our diagnosys:</strong> <span class="user-data-answer">${sector}</span>
+                        <strong>Setor de atuação:</strong> <span class="user-data-answer">${sector}</span>
                     </div>
                     <div class="userDataOption">
-                        <strong>aceleratedStartup:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
+                        <strong>Motivo de responder este diag:</strong> <span class="user-data-answer">${whyDiagnosys}</span>
                     </div>
 
                    
