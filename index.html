@@ -77,13 +77,24 @@
                 
             </div>
 
+            <!-- termos de uso checkbox -->
+            
             <div id="i_agree_checkbox_insertable_area" class="agreeCheck">
 
                 <input type="checkbox" id="agreeCheck" name="agreeCheck" onclick="checkTBox();"/>
                 <label for="agreeCheck">Eu declaro que lí e aceito os <a href="https://www.w3schools.com">Termos de Uso</a> e <a href="https://www.w3schools.com">Política de Privacidade</a></label>
 
             </div>
-            
+
+
+            <!-- mensagem de alerta caso usuario nao aceite termos -->
+            <div class="alert" id="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+            <strong>Atenção!</strong> Para continuar é preciso aceitar os Termos de uso e Privacidade
+            </div>
+
+
+
 
 
             <button 
@@ -91,6 +102,7 @@
                 class="contact-form-btn btn-disabled"        
                 name="submitbtn" 
                 id="index-form-button"
+                onclick="validarAlerta();"
                 disabled
             >
                 Próximo passo

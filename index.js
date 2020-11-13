@@ -2,6 +2,7 @@ const btnInitForm = document.querySelector('#index-form-button');
 const form = querySelector('#init-contact-form');
 const inputs = Array.from(querySelectorAll('input'));
 const botão = document.querySelector('#index-form-button')
+const alerta = document.querySelector('#alert')
 
 btnInitForm.addEventListener('click', handleSubmit);
 
@@ -60,8 +61,21 @@ function checkTBox()
   {
 	 botão.classList.remove("btn-disabled")
 	 botão.disabled = false
+	 
   } else{
 	botão.classList.add("btn-disabled")
 	botão.disabled = true
   }
 }
+
+// let removeAlerta = alerta.style.display='none';
+// function validarAlerta(){
+// 	if(botão.disable = true){
+// 		alerta.style.display='none'
+// 	} else{
+		
+		
+// 	}
+// }
+
+
