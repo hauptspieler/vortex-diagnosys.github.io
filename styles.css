@@ -373,9 +373,10 @@ select.contact-form-text {
     font-size: 100%;
 }
 
-
-
-
+.btn-disabled, .btn-disabled:hover{
+    background-color: rgb(109, 102, 107);
+    cursor: inherit;
+}
 
 
 /* Change the white to any color ;) */

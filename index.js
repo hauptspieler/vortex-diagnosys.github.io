@@ -1,6 +1,7 @@
 const btnInitForm = document.querySelector('#index-form-button');
 const form = querySelector('#init-contact-form');
 const inputs = Array.from(querySelectorAll('input'));
+const botão = document.querySelector('#index-form-button')
 
 btnInitForm.addEventListener('click', handleSubmit);
 
@@ -49,3 +50,18 @@ function handleSubmit(event) {
 }
 
 addEventListenersToInputs();
+
+
+
+
+function checkTBox()
+{
+  if (document.getElementById('agreeCheck').checked) 
+  {
+	 botão.classList.remove("btn-disabled")
+	 botão.disabled = false
+  } else{
+	botão.classList.add("btn-disabled")
+	botão.disabled = true
+  }
+}

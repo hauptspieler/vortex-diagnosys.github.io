@@ -78,23 +78,20 @@
             </div>
 
             <div id="i_agree_checkbox_insertable_area" class="agreeCheck">
-            <!-- I Agree Checkbox by https://www.TermsFeed.com -->
-<script type="text/javascript" src="//www.termsfeed.com/public/i-agree-checkbox/releases/1.0.0/i-agree-checkbox.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
-i_agree_checkbox.run({"palette":"light","terms_and_conditions_url":"https://www.lipsum.com/","privacy_policy_url":"https://www.lipsum.com/","privacy_policy_text_container_id":"#user_i_agree_checkbox_privacy_policy_text_container","terms_and_conditions_text_container_id":"#user_i_agree_checkbox_terms_and_conditions_text_container","warning_dialog_text":"Atenção. Você precisa aceitar nossos termos.","consent_to_agreements":["privacy_policy","terms_and_conditions"],"agreements_display_type":"link","checkbox_text_area_id":"#i_agree_checkbox_insertable_area","checkbox_text":"Eu declaro que lí e aceito a Política de Privacidade (%PrivacyPolicy%) e os Termos de Uso (%TermsAndConditions%.)","submit_button_id":"#index-form-button","agree_button_text":"OK","close_button_text":"Cancel"});
-});
-</script>
-<noscript>I Agree Checkbox by <a href="https://www.TermsFeed.com/i-agree-checkbox/" rel="nofollow noopener">TermsFeed.com</a></noscript>
-<!-- End I Agree Checkbox -->
+
+                <input type="checkbox" id="agreeCheck" name="agreeCheck" onclick="checkTBox();"/>
+                <label for="agreeCheck">Eu declaro que aceito os termos de politica de privacidade e termos deu uso</label>
 
             </div>
 
+
+
             <button 
                 type="button" 
-                class="contact-form-btn"        
+                class="contact-form-btn btn-disabled"        
                 name="submitbtn" 
                 id="index-form-button"
+                disabled
             >
                 Próximo passo
             </button>
