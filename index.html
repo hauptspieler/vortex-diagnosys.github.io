@@ -67,10 +67,11 @@
                 <label id="site">Seu site</label>
                 <input    
                     type="text" 
-                    class="contact-form-text jqueryMask"
+                    class="contact-form-text"
                     placeholder="Seu site" 
                     name="site" 
-                    data-inputmask-regex="^((https)?:\/\/)?[a-z0-9]+.+.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$"  
+                    onkeypress="mascarinha(this)"
+                    onblur="mascarinha(this)"
                     required
                     />  
                 
@@ -100,6 +101,18 @@
         }
 
  )
+
+
+ function mascarinha(input) {
+            setTimeout(function () {
+                // poderia ser a chamada para uma funcao formatadora, como usamos na de telefone
+                // mas como é uma formatação tao basica, nao sei se faz sentido ter uma outra função
+                var valorFormatado = input.value.replace(/^([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/, 'https://$1.$2')                
+                
+                input.value = valorFormatado
+            console.log('valor formatado: ' ,valorFormatado)
+            }, 1);
+        }
 
 
     </script>
