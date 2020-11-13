@@ -366,9 +366,12 @@ select.contact-form-text {
 }
 
 
-
-
-
+.agreeCheck{
+    background-color: white;
+    border-radius: 4px;
+    padding: 28px;
+    font-size: 100%;
+}
 
 
 
@@ -405,4 +408,6 @@ input:-webkit-autofill {
         width: 100%;
     }
 }
+
+
 
