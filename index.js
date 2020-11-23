@@ -4,7 +4,7 @@ const inputs = Array.from(querySelectorAll('input'));
 const botão = document.querySelector('#index-form-button')
 const alerta = document.querySelector('#alert')
 
-btnInitForm.addEventListener('click', handleSubmit);
+btnInitForm.addEventListener('click', validarAlerta);
 
 function addEventListenersToInputs() {
 	function removeErrorOnChange(event) {
@@ -26,8 +26,8 @@ const phoneInput = document
 	.querySelector('#whatsapp')
 	
 
-function handleSubmit(event) {
-	event.preventDefault();
+function handleSubmit() {
+	
 	const formValidity = verifyFormData(form);
 
 	if (!formValidity) {
@@ -46,8 +46,8 @@ function handleSubmit(event) {
 
 	const userDataJson = JSON.stringify(userData);
 	sessionStorage.setItem('userInfo', userDataJson);
-	window.location.href = './finalForm.html';
-	
+
+	window.location.href = './finalForm.html';		
 }
 
 addEventListenersToInputs();
@@ -61,21 +61,28 @@ function checkTBox()
   {
 	 botão.classList.remove("btn-disabled")
 	 botão.disabled = false
+	 alerta.style.display = 'none'
 	 
   } else{
 	botão.classList.add("btn-disabled")
 	botão.disabled = true
+	alerta.style.display = 'block'
+
   }
 }
 
-// let removeAlerta = alerta.style.display='none';
-// function validarAlerta(){
-// 	if(botão.disable = true){
-// 		alerta.style.display='none'
-// 	} else{
-		
-		
-// 	}
-// }
+ function validarAlerta(event){
+	
+	event.preventDefault();
+	
+ 	if  (!document.getElementById('agreeCheck').checked){
+		alerta.style.display='block';
 
+				console.log(window.location)			
+	}
 
+		else{
+			
+			handleSubmit();
+	}
+}

@@ -57,7 +57,7 @@ function verifyFormData(container) {
 					} else {
 						p.innerText = 'Campo obrigatório';
 					}
-					console.log(el.type);
+				
 
 					el.classList.add('error');
 					div.appendChild(p);
