@@ -46,6 +46,9 @@ function handleSubmit() {
 
 	const userDataJson = JSON.stringify(userData);
 	sessionStorage.setItem('userInfo', userDataJson);
+	sessionStorage.setItem("dataEhora", JSON.stringify(dataAtual));		
+
+			console.log(dataAtual)
 
 	window.location.href = './finalForm.html';		
 }
@@ -75,14 +78,4 @@ function checkTBox()
 	
 	event.preventDefault();
 	
- 	if  (!document.getElementById('agreeCheck').checked){
-		alerta.style.display='block';
-
-				console.log(window.location)			
-	}
-
-		else{
-			
-			handleSubmit();
-	}
-}
+ }

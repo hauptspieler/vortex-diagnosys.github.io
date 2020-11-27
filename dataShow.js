@@ -1,5 +1,5 @@
 const usersInfoContainer = querySelector('#users-info');
-
+let phoneNumberCleaned = cleanPhoneNumber(userInfo.whatsapp);
 const userInfoArray = [];
 let toRender;
 
@@ -79,14 +79,6 @@ const renderUserData = (user) => {
 		optionClicked += `<div class="options">${el}: ${surveyData.optionClicked[el]}</div>`;
     }
     
-
-    // let resposta1 = surveyData.answers.answer;
-
-    // console.log('resposta1')
-
- 
-    let phoneNumberCleaned = cleanPhoneNumber(userInfo.whatsapp);
-    //////////////////////////////////////////////////////////////
     
 	const uuid = `hash${phoneNumberCleaned}${Date.now()}`;
 
@@ -104,6 +96,7 @@ const renderUserData = (user) => {
                     <div><strong>Site:</strong> <span>${userInfo.site}</span></div>
                     <div><strong>Telefone:</strong> <span>${userInfo.whatsapp}</span></div>
                     <div><strong>Fase:</strong> <span>${surveyData.result}</span></div>
+                    <div><strong>Data que aceitou termos:</strong> <span>${surveyData.result}</span></div>
 
                 </div>
                 <button class="btn btn-primary" id="${uuid}" >VER DETALHES</button>
@@ -164,7 +157,7 @@ function toggleInfo(event) {
 		section.classList.add('toggle');
 	}
 }
-  /////////////////////////////////////////////
+ 
    // formata numero de telefone 
     
    function cleanPhoneNumber(phoneNumber){
