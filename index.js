@@ -45,10 +45,9 @@ function handleSubmit() {
 	};
 
 	const userDataJson = JSON.stringify(userData);
-	sessionStorage.setItem('userInfo', userDataJson);
-	sessionStorage.setItem("dataEhora", JSON.stringify(dataAtual));		
+	sessionStorage.setItem('userInfo', userDataJson);	
 
-			console.log(dataAtual)
+
 
 	window.location.href = './finalForm.html';		
 }
@@ -59,8 +58,13 @@ addEventListenersToInputs();
 
 
 function checkTBox()
+
+
 {
-  if (document.getElementById('agreeCheck').checked) 
+	console.log('deubosta')
+
+	if (document.getElementById('agreeCheck').checked) 
+	
   {
 	 botão.classList.remove("btn-disabled")
 	 botão.disabled = false
@@ -74,8 +78,19 @@ function checkTBox()
   }
 }
 
- function validarAlerta(event){
-	
+
+function validarAlerta(event){
+
 	event.preventDefault();
-	
- }
+
+ 	if  (!document.getElementById('agreeCheck').checked){
+		alerta.style.display='block';
+
+				console.log(window.location)			
+	}
+
+		else{
+
+			handleSubmit();
+	}
+} 
