@@ -1,5 +1,4 @@
 const usersInfoContainer = querySelector('#users-info');
-let phoneNumberCleaned = cleanPhoneNumber(userInfo.whatsapp);
 const userInfoArray = [];
 let toRender;
 
@@ -79,7 +78,7 @@ const renderUserData = (user) => {
 		optionClicked += `<div class="options">${el}: ${surveyData.optionClicked[el]}</div>`;
     }
     
-    
+    let phoneNumberCleaned = cleanPhoneNumber(userInfo.whatsapp);
 	const uuid = `hash${phoneNumberCleaned}${Date.now()}`;
 
 	const component = `
