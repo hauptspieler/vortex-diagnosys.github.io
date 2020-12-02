@@ -252,7 +252,10 @@ function finishSurvey() {
 		body,
 	}
   
-    fetch('https://vortex-survey-api.herokuapp.com/full-survey', config)  
+	fetch(
+		'https://vortex-survey-api.herokuapp.com/full-survey',
+		// 'http://localhost:3333/full-survey',
+		 config)  
     .then(res => window.location.href = './thankyou.html')
 
 	// window.location.href = './initForm.html'

@@ -13,8 +13,8 @@ async function getUsersFromFirebase() {
 		cache: 'default',
 	};
 	const respPending = await fetch(
-        // 'https://vortex-survey-api.herokuapp.com/full-survey'
-        'http://localhost:3333/full-survey',
+        'https://vortex-survey-api.herokuapp.com/full-survey',
+        // http://localhost:3333/full-survey',
 		config
 	);
 	const response = await respPending.json();
@@ -96,7 +96,7 @@ const renderUserData = (user) => {
                     <div><strong>Site:</strong> <span>${userInfo.site}</span></div>
                     <div><strong>Telefone:</strong> <span>${userInfo.whatsapp}</span></div>
                     <div><strong>Fase:</strong> <span>${surveyData.result}</span></div>
-                    <div><strong>Data que aceitou termos:</strong> <span>${surveyData.result}</span></div>
+                    <div><strong>Data que aceitou termos:</strong> <span>${userInfo.createdAt}</span></div>
 
                 </div>
                 <button class="btn btn-primary" id="${uuid}" >VER DETALHES</button>
